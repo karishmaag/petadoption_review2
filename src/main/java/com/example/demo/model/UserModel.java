@@ -1,42 +1,42 @@
 package com.example.demo.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
 @Entity
 @Table(name="usertable")
 public class UserModel {
 
 	@Id
-	private int id;
+	@GeneratedValue
+	private Long id;
 	private String name;
 	private int age;
-	private String address;
+	private long aadhar;
 	private String email;
-	private int contact;
-	private String occupation;
-	private String review;
+	private String password;
+	private long phone;
+	private String address;
 	public UserModel() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
-	public UserModel(int id1,String name, int age, String address, String email, int contact, String occupation,
-			String review) {
+	public UserModel(Long id, String name, int age, long aadhar, String email, String password, long phone,
+			String address) {
 		super();
-		id=id1;
+		this.id = id;
 		this.name = name;
 		this.age = age;
-		this.address = address;
+		this.aadhar = aadhar;
 		this.email = email;
-		this.contact = contact;
-		this.occupation = occupation;
-		this.review = review;
+		this.password = password;
+		this.phone = phone;
+		this.address = address;
 	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -51,11 +51,11 @@ public class UserModel {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getAddress() {
-		return address;
+	public long getAadhar() {
+		return aadhar;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAadhar(long aadhar) {
+		this.aadhar = aadhar;
 	}
 	public String getEmail() {
 		return email;
@@ -63,24 +63,24 @@ public class UserModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getContact() {
-		return contact;
+	public String getPassword() {
+		return password;
 	}
-	public void setContact(int contact) {
-		this.contact = contact;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public String getOccupation() {
-		return occupation;
+	public long getPhone() {
+		return phone;
 	}
-	public void setOccupation(String occupation) {
-		this.occupation = occupation;
+	public void setPhone(long phone) {
+		this.phone = phone;
 	}
-	public String getReview() {
-		return review;
+	public String getAddress() {
+		return address;
 	}
-	public void setReview(String review) {
-		this.review =review;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
-
+	
 }

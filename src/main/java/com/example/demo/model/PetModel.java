@@ -1,107 +1,92 @@
 package com.example.demo.model;
 
-
-
-//import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-//import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+//import java.lang.constant.*; 
 
 @Entity
 @Table(name="petadoption")
 public class PetModel {
-    
-	@Id
-	private int animlaid;
-    private String animalname;
-    private String animalspecies;
-    private String animalcolor;
-    private String gender;
-    private int weight;
-    private int age;
-    private String features;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="id")
-    private UserModel cs;
-    //@OneToMany(cascade = CascadeType.ALL)
-	//@JoinColumn(name="stuid")
-    //private List<Course> cs;
-	public PetModel() {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long pid;
+	private String petname;	
+	private String color;
+	private String uname;
+	private String uemail;
+	private String upassword;
+	private long uphone; 
+	private String uaddress;
+	
+//	public PetModel() {
+//		// TODO Auto-generated constructor stub
+//	}
+	
+	public PetModel(Long pid, String petname, String color, String uname, String uemail, String upassword, long uphone,
+			String uaddress) {
 		super();
+		this.pid = pid;
+		this.petname = petname;
+		this.color = color;
+		this.uname = uname;
+		this.uemail = uemail;
+		this.upassword = upassword;
+		this.uphone = uphone;
+		this.uaddress = uaddress;
+	}
+	public PetModel() {
 		// TODO Auto-generated constructor stub
 	}
-	public PetModel(int animlaid, String animalname, String animalspecies, String animalcolor, String gender,
-			int weight, int age, String features, UserModel cs) {
-		super();
-		this.animlaid = animlaid;
-		this.animalname = animalname;
-		this.animalspecies = animalspecies;
-		this.animalcolor = animalcolor;
-		this.gender = gender;
-		this.weight = weight;
-		this.age = age;
-		this.features = features;
-		this.cs = cs;
+	public Long getPid() {
+		return pid;
 	}
-	public int getAnimlaid() {
-		return animlaid;
+	public void setPid(Long pid) {
+		this.pid = pid;
 	}
-	public void setAnimlaid(int animlaid) {
-		this.animlaid = animlaid;
+	public String getPetname() {
+		return petname;
 	}
-	public String getAnimalname() {
-		return animalname;
+	public void setPetname(String petname) {
+		this.petname = petname;
 	}
-	public void setAnimalname(String animalname) {
-		this.animalname = animalname;
+	public String getColor() {
+		return color;
 	}
-	public String getAnimalspecies() {
-		return animalspecies;
+	public void setColor(String color) {
+		this.color = color;
 	}
-	public void setAnimalspecies(String animalspecies) {
-		this.animalspecies = animalspecies;
+	public String getUname() {
+		return uname;
 	}
-	public String getAnimalcolor() {
-		return animalcolor;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
-	public void setAnimalcolor(String animalcolor) {
-		this.animalcolor = animalcolor;
+	public String getUemail() {
+		return uemail;
 	}
-	public String getGender() {
-		return gender;
+	public void setUemail(String uemail) {
+		this.uemail = uemail;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public String getUpassword() {
+		return upassword;
 	}
-	public int getWeight() {
-		return weight;
+	public void setUpassword(String upassword) {
+		this.upassword = upassword;
 	}
-	public void setWeight(int weight) {
-		this.weight = weight;
+	public long getUphone() {
+		return uphone;
 	}
-	public int getAge() {
-		return age;
+	public void setUphone(long uphone) {
+		this.uphone = uphone;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public String getUaddress() {
+		return uaddress;
 	}
-	public String getFeatures() {
-		return features;
+	public void setUaddress(String uaddress) {
+		this.uaddress = uaddress;
 	}
-	public void setFeatures(String features) {
-		this.features = features;
-	}
-	public UserModel getCs() {
-		return cs;
-	}
-	public void setCs(UserModel cs) {
-		this.cs = cs;
-	}
-	
 	
 }
